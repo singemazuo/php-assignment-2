@@ -26,13 +26,13 @@ EOT;
 
             include_once 'includes/open_connection.php';
             $link = make_connection('joker');
-            $result = $link->query("SELECT * FROM jokes WHERE id = ".$jokeId);
+            $result = $link->query("CALL getJokeDetails(".$jokeId.")");
 
             if ($row = $result->fetch_assoc()){
                 echo "<div class='background'><b>Title: </b>".$row['title']."<br>";
                 echo "<b>Joke ID: </b>".$row['id']."<br><br>";
-                echo "<b>Teaser: </b><a href='joke_details.php?id=".$row['id']."'>".$row['teaser']."</a><br>";
-                echo "<b>Joke Text: </b>".$row['joke_text']."<br>";
+                echo "<b>Teaser: </b>".$row['teaser']."<br><br>";
+                echo "<b>Joke Text: </b>".$row['joke_text']."<br><br>";
                 echo "<b>Delete:</b>"."<a href='joke_approval.php?id=".$row['id']."'>Delete this joke</a><br></div><hr>";
             }else{
                 echo "<h3 class='message'>Invalid Data.</h3>";

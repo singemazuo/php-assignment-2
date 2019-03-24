@@ -21,7 +21,7 @@
     if ($result = $link->query('CALL getJokesForApproval()')){
         while ($row = $result->fetch_assoc()){
             echo "<div class='background'><b>Title: </b>".$row['title']."<br>";
-            echo "<b>Teaser: </b><a href='joke_details.php?id='".$row['id']."'>".$row['teaser']."</a><br>";
+            echo "<b>Teaser: </b><a href='joke_details.php?id=".$row['id']."'>".$row['teaser']."</a><br>";
             echo "<b>Joke Text: </b>".$row['joke_text']."<br><br>";
             echo "<a href='joke_approval.php?id=".$row['id']."'>Approve Joke</a></div><hr>";
         }
