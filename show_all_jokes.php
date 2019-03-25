@@ -14,8 +14,6 @@
 
     $link = make_connection("joker");
 
-    $sql = "SELECT * FROM jokes";
-    $result = $link->query($sql);
     if ($result = $link->query('CALL getJokes()')){
         while (list($id,$title,$teaser,$joke_text,$visible,$date) = $result->fetch_row()){
             echo <<<ETO

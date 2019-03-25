@@ -33,7 +33,7 @@ EOT;
                 echo "<b>Joke ID: </b>".$row['id']."<br><br>";
                 echo "<b>Teaser: </b>".$row['teaser']."<br><br>";
                 echo "<b>Joke Text: </b>".$row['joke_text']."<br><br>";
-                echo "<b>Delete:</b>"."<a href='joke_approval.php?id=".$row['id']."'>Delete this joke</a><br></div><hr>";
+                echo "<b>Delete:</b>"."<a href='delete_joke.php?id=".$row['id']."'>Delete this joke</a><br></div><hr>";
             }else{
                 echo "<h3 class='message'>Invalid Data.</h3>";
                 echo "<a href='approve_jokes.php'>Go back and try again.</a>";
